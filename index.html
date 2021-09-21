@@ -7,6 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+
   <style>
     body {
       margin: 0;
@@ -22,82 +24,44 @@
       min-height: 400px;
       padding: 100px 20vw;
     }
-    .blue {
-        background: #3c31dd;
-      }
-    .red {
-      background: #dd3f31;
+
+    .flip {
+      transform: rotate(180deg);
     }
-    .pink {
-      background: #ff0066;
-      overflow: hidden;
-    }
-    .dark {
-      background: #0f0f10;
-    }
-    .curve {
-        position: absolute;
-        height: 250px;
-        width: 100%;
-        bottom: 0;
-        text-align: center;
-      }
-    .curve::before {
-      content: '';
-      display: block;
+
+    .blob-motion {
       position: absolute;
-      border-radius: 100% 50%;
-      width: 55%;
-      height: 100%;
-      transform: translate(85%, 60%);
-      background-color: hsl(216, 21%, 16%);
+      transform: translateY(-20%);
     }
-    .curve::after {
-      content: '';
-      display: block;
-      position: absolute;
-      border-radius: 100% 50%;
-      width: 55%;
-      height: 100%;
-      background-color: #3c31dd;
-      transform: translate(-4%, 40%);
-      z-index: -1;
-    }
+
   </style>
   <title>Curvy Website</title>
 </head>
 <body>
   
-  <section class="blue">
+  <div class="spacer layer2 flip"></div>
+  <section class="pink">
     <h1>Nice Curves</h1>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse temporibus consequuntur quibusdam sequi voluptatum laboriosam. Molestiae et doloribus, quaerat ipsa possimus quas obcaecati nihil suscipit, error, reprehenderit atque non officiis.</p>
-    <div class="curve"></div>
+  
+    <svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><g transform="translate(445.49064028290354 346.5984523639754)"><path id="blob1" d="M127.9 -142.9C162.9 -92.9 186.4 -46.4 188.3 1.9C190.2 50.2 170.4 100.4 135.4 127.2C100.4 154.1 50.2 157.5 7.4 150.1C-35.4 142.7 -70.7 124.4 -105 97.5C-139.4 70.7 -172.7 35.4 -178.5 -5.8C-184.2 -46.9 -162.5 -93.8 -128.1 -143.8C-93.8 -193.8 -46.9 -246.9 -0.2 -246.7C46.4 -246.4 92.9 -192.9 127.9 -142.9" fill="#BB004B"></path></g>
+    <g transform="translate(480.66141840045026 335.20274521923733)" style="visibility: hidden"><path id="blob2" d="M150 -164C184 -116 194 -58 190.9 -3.1C187.9 51.9 171.7 103.7 137.7 129.9C103.7 156 51.9 156.5 -6 162.5C-63.9 168.5 -127.8 180.1 -177.8 153.9C-227.8 127.8 -263.9 63.9 -249.6 14.3C-235.4 -35.4 -170.7 -70.7 -120.7 -118.7C-70.7 -166.7 -35.4 -227.4 11.3 -238.7C58 -250 116 -212 150 -164" fill="#BB004B"></path></g>
+    </svg>
+
+    <script>
+      const tween = KUTE.fromTo(
+        '#blob1',
+        { path: '#blob1' },
+        { path: '#blob2' },
+        { repeat: 999, duration: 3000, yoyo: true },
+      )
+
+      tween.start()
+    </script>
   </section>
-  <section>
-    <h1>Nice Curves</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse temporibus consequuntur quibusdam sequi voluptatum laboriosam. Molestiae et doloribus, quaerat ipsa possimus quas obcaecati nihil suscipit, error, reprehenderit atque non officiis.</p>
-  </section>
-  <section>
-    <h1>Nice Curves</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse temporibus consequuntur quibusdam sequi voluptatum laboriosam. Molestiae et doloribus, quaerat ipsa possimus quas obcaecati nihil suscipit, error, reprehenderit atque non officiis.</p>
-  </section>
-  <section>
-    <h1>Nice Curves</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse temporibus consequuntur quibusdam sequi voluptatum laboriosam. Molestiae et doloribus, quaerat ipsa possimus quas obcaecati nihil suscipit, error, reprehenderit atque non officiis.</p>
-  </section>
-  <section>
-    <h1>Nice Curves</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse temporibus consequuntur quibusdam sequi voluptatum laboriosam. Molestiae et doloribus, quaerat ipsa possimus quas obcaecati nihil suscipit, error, reprehenderit atque non officiis.</p>
-  </section>
-  <section>
-    <h1>Nice Curves</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse temporibus consequuntur quibusdam sequi voluptatum laboriosam. Molestiae et doloribus, quaerat ipsa possimus quas obcaecati nihil suscipit, error, reprehenderit atque non officiis.</p>
-  </section>
-  <section>
-    <h1>Nice Curves</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse temporibus consequuntur quibusdam sequi voluptatum laboriosam. Molestiae et doloribus, quaerat ipsa possimus quas obcaecati nihil suscipit, error, reprehenderit atque non officiis.</p>
-  </section>
-  <section>
+
+
+  <section class="">
     <h1>Nice Curves</h1>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse temporibus consequuntur quibusdam sequi voluptatum laboriosam. Molestiae et doloribus, quaerat ipsa possimus quas obcaecati nihil suscipit, error, reprehenderit atque non officiis.</p>
   </section>
